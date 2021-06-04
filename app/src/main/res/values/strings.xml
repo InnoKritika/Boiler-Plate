@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Boiler Plate</string>
+    <string-array name="categories">
+        <item>love</item>
+        <item>nature</item>
+        <item>dreams</item>
+        <item>classic</item>
+        <item>adventure</item>
+        <item>relaxation</item>
+    </string-array>
+</resources>
