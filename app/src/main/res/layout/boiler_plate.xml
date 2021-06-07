@@ -10,13 +10,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:orientation="vertical">
             <Button
+                android:id="@+id/btnImagePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Image picker"
                 android:textStyle="bold"
                 android:padding="10dp"/>
+            <Button
+                android:id="@+id/btnStatteredImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stattered Image"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+            <Button
+                android:id="@+id/btnCrudOperations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crud Operations"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
 
         </LinearLayout>
     </ScrollView>
