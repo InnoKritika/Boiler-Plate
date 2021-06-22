@@ -10,4 +10,28 @@
     <color name="magenta_700">#930133</color>
     <color name="magenta_500">#AF0B43</color>
     <color name="off_white">#F6F0DE</color>
+
+
+    <color name="color_greyscale">#BDBDBD</color>
+    <color name="color_text_hint">#707C8A</color>
+
+
+    <color name="color_card">#2A2B32</color>
+
+    <color name="color_orange">#F58433</color>
+
+
+    <color name="colorAccent">#1A1A1A</color>
+    <color name="colorPrimaryDark_trans">#F58433</color>
+    <color name="transprent">#001A1A1A</color>
+    <color name="active_tab_color">#FFFFFFFF</color>
+    <color name="inactive_tab_color">#1A1A1A</color>
+    <color name="Bottom_navigation">#B53D3E45</color>
+
+    <color name="grey_4">#BDBDBD</color>
+    <color name="grey_3">#808285</color>
+    <color name="grey_2">#324151</color>
+    <color name="grey_1">#2A2B32</color>
+
+    <color name="green">#27AE60</color>
 </resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:src="@drawable/uclick_appicon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_welcome"
+            style="@style/headTextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/welcome_head"
+            android:textColor="@color/colorPrimaryDark_trans" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_details"
+            style="@style/detailTextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_welcome"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/welcome_detail"
+            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Login"
+                app:backgroundTint="@color/colorPrimaryDark_trans" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignUp"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/btnLogin"
+                android:layout_marginTop="16dp"
+                android:text="Sign Up"
+                app:backgroundTint="@color/grey_2" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -46,4 +46,8 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
     //dailog plus
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+
+    //circular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }

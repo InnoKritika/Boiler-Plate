@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:layout_below="@id/toolbar1">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_screen_detail"
+        android:layout_width="match_parent"
+        style="@style/detailTextAppearance"
+        android:layout_height="wrap_content"
+        android:text="@string/send_otp"
+        android:textColor="@color/white" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_91"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_screen_detail"
+        android:text="(+91)"
+        android:textColor="@color/colorPrimaryDark_trans"
+        style="@style/detailTextAppearance"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_screen_detail"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/tv_91"
+        android:text="7000745454"
+        android:textColor="@color/colorPrimaryDark_trans"
+        style="@style/detailTextAppearance"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_91"
+        android:layout_marginTop="65dp"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/OTP1"
+            android:layout_width="62dp"
+            android:layout_height="48dp"
+            android:background="@drawable/border_orange"
+            android:gravity="center"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/OTP2"
+            android:layout_width="62dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/OTP1"
+            android:background="@drawable/border_orange"
+            android:gravity="center"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/OTP3"
+            android:layout_width="62dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/OTP2"
+            android:background="@drawable/border_orange"
+            android:gravity="center"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/OTP4"
+            android:layout_width="62dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/OTP3"
+            android:background="@drawable/border_orange"
+            android:gravity="center"
+            android:inputType="number" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/OTP1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="24dp"
+            style="@style/detailTextAppearance"
+            android:text="@string/resend_otp"
+            android:textColor="@color/grey_3"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_resend_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/OTP3"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/tv_resend"
+            android:text="Resend-OTP"
+            android:textColor="@color/colorPrimaryDark_trans"
+            style="@style/detailTextAppearance"/>
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinue"
+        style="@style/buttonTextAppearance"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:text="Continue"
+        app:backgroundTint="@color/colorPrimaryDark_trans" />
+    </RelativeLayout>
+</RelativeLayout>

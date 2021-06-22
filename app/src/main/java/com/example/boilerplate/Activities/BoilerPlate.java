@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.boilerplate.R;
 
 public class BoilerPlate extends AppCompatActivity {
-    Button btnImagePicker, btnStatteredImage,btnCrudOperations;
+    Button btnImagePicker, btnStatteredImage,btnCrudOperations,btnMaterialDesign;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +37,19 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(crud);
             }
         });
+        btnMaterialDesign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent material = new Intent(BoilerPlate.this,WelcomeActivity.class);
+                startActivity(material);
+            }
+        });
     }
 
     private void initView() {
         btnImagePicker = findViewById(R.id.btnImagePicker);
         btnStatteredImage = findViewById(R.id.btnStatteredImage);
         btnCrudOperations = findViewById(R.id.btnCrudOperations);
+        btnMaterialDesign = findViewById(R.id.button_material_design);
     }
 }

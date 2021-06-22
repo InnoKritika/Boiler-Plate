@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar1"
+        android:layout_margin="16dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/uclick_appicon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:gravity="center"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGenerateOTP"
+            style="@style/buttonTextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/tvLogin"
+            android:layout_marginTop="40dp"
+            android:text="@string/generate_otp"
+            app:backgroundTint="@color/colorPrimaryDark_trans" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvOR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnGenerateOTP"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:gravity="center"
+            android:text="OR"
+            android:textColor="@color/grey_3"
+            android:textSize="14sp"
+            android:theme="@style/Theme.MaterialComponents.Light" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoogle"
+            style="@style/buttonTextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/tvOR"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/ic_google"
+            android:paddingLeft="20dp"
+            android:text="Login with Google"
+            app:backgroundTint="@color/grey_2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFacebook"
+            style="@style/buttonTextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/btnGoogle"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/ic_facebook_color"
+            android:paddingLeft="20dp"
+            android:text="Login with Facebook"
+            app:backgroundTint="@color/grey_2" />
+    </RelativeLayout>
+
+</RelativeLayout>

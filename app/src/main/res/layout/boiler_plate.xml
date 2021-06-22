@@ -33,6 +33,13 @@
                 android:text="Crud Operations"
                 android:textStyle="bold"
                 android:padding="10dp"/>
+            <Button
+                android:id="@+id/button_material_design"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Material design"
+                android:textStyle="bold"
+                android:padding="10dp"/>
 
 
         </LinearLayout>

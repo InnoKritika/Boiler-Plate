@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <include
+        android:id="@+id/toolbar_1"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_1"
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:background="@drawable/setting_share_background">
+
+                <LinearLayout
+                    android:id="@+id/ll_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="55dp"
+                        android:layout_height="78dp"
+                        android:background="@drawable/setting_share_1"
+                        android:gravity="center_horizontal|bottom">
+
+                        <ImageView
+                            android:id="@+id/btn_share"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginBottom="16dp"
+                            android:src="@drawable/ic_share_icon" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/head"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/dmsans_bold"
+                            android:text="Share &amp; Earn"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/head"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/dmsans_regular"
+                            android:text="@string/share_earn"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_share"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_link"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="0.68"
+                        android:background="@drawable/setting_link_background"
+                        android:fontFamily="@font/dmsans_regular"
+                        android:gravity="center"
+                        android:text="https://example.com"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_copy"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="0.32"
+                        style="@style/TextAppearance.MaterialComponents.Button"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Copy"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/colorPrimaryDark_trans"
+                        android:drawableLeft="@drawable/ic_copy"
+                        app:cornerRadius="8dp"
+                        android:textSize="16dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_link"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/facebook"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.25"
+                        android:paddingLeft="40dp"
+                        android:src="@drawable/ic_facebook" />
+
+                    <ImageView
+                        android:id="@+id/instagram"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.25"
+                        android:paddingLeft="20dp"
+                        android:src="@drawable/ic_instagram" />
+
+                    <ImageView
+                        android:id="@+id/whatsapp"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.25"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/ic_whatsapp" />
+
+                    <ImageView
+                        android:id="@+id/twitter"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.25"
+                        android:paddingRight="40dp"
+                        android:src="@drawable/ic_twitter" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_auto_change_wallpaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_1"
+                android:layout_marginTop="16sp"
+                android:background="@drawable/setting_button_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16sp"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="Auto Change Wallpaper"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/toogle_on"
+                    android:layout_width="24dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_toogle_on" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_wallpaper_save_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_auto_change_wallpaper"
+                android:layout_marginTop="16sp"
+                android:background="@drawable/setting_button_background">
+
+                <TextView
+                    android:id="@+id/head_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16sp"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="Wallpaper Save Location"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/location_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/head_l"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginTop="-5dp"
+                    android:fontFamily="@font/dmsans_regular"
+                    android:paddingBottom="12dp"
+                    android:text="/storage/phone"
+                    android:textColor="@color/grey_3" />
+
+                <ImageView
+                    android:id="@+id/button_wallpaper_location"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_rate_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_wallpaper_save_location"
+                android:layout_marginTop="16sp"
+                android:background="@drawable/setting_button_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16sp"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="Rate Apps &amp; Earn Rewards"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/button_rate"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_rate_app"
+                android:layout_marginTop="16sp"
+                android:background="@drawable/setting_button_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16sp"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="About"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/button_about"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_privacy_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_about"
+                android:layout_marginTop="16sp"
+                android:background="@drawable/setting_button_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16sp"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="Privacy Policy"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/button_privacy_policy"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_term"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_privacy_policy"
+                android:layout_marginTop="16sp"
+                android:background="@drawable/setting_button_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16sp"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="Term of Use"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/button_term"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_term"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/dmsans_medium"
+                android:text="App Version"
+                android:textColor="@color/grey_3"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_app_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_term"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/dmsans_medium"
+                android:text="v.1.0"
+                android:textColor="@color/grey_3"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

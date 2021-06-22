@@ -1,66 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_crud"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:layout_height="wrap_content">
+    app:cardCornerRadius="7dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_margin="5dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:layout_height="match_parent">
+        android:layout_margin="5dp">
+
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
-            android:textColor="@color/black"
-            android:textStyle="bold|italic"
-            android:textSize="20sp"/>
+            android:textColor="@color/off_white"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
         <TextView
             android:id="@+id/tv_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-Mail"
             android:layout_below="@id/tv_name"
             android:layout_marginLeft="8dp"
-            android:textColor="@color/black"/>
+            android:text="E-Mail"
+            android:textColor="@color/off_white" />
+
         <TextView
             android:id="@+id/tv_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Number"
             android:layout_below="@id/tv_email"
             android:layout_marginLeft="8dp"
-            android:textColor="@color/black"/>
+            android:text="Phone Number"
+            android:textColor="@color/off_white" />
+
         <TextView
             android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UserName"
             android:layout_below="@id/tv_phone"
             android:layout_marginLeft="8dp"
-            android:textColor="@color/black"/>
+            android:text="UserName"
+            android:textColor="@color/off_white" />
+
         <Button
             android:id="@+id/btn_edit"
             android:layout_width="100dp"
             android:layout_height="35dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="8dp"
-            android:textSize="12sp"
             android:layout_marginRight="5dp"
-            android:textStyle="bold"
+            android:padding="5dp"
             android:text="Edit"
-            android:layout_alignParentRight="true"/>
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="100dp"
             android:layout_height="35dp"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginRight="5dp"
-            android:text="Delete"
             android:layout_below="@id/btn_edit"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:text="Delete"
+            android:textSize="12sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
