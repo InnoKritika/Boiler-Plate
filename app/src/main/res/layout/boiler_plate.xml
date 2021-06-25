@@ -40,6 +40,13 @@
                 android:text="Material design"
                 android:textStyle="bold"
                 android:padding="10dp"/>
+            <Button
+                android:id="@+id/buttonCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Card View"
+                android:textStyle="bold"
+                android:padding="10dp"/>
 
 
         </LinearLayout>
