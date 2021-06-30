@@ -12,7 +12,7 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
 
 public class BoilerPlate extends AppCompatActivity {
-    MaterialButton btnImagePicker, btnStatteredImage,btnCrudOperations,btnMaterialDesign,btnCardView,btnBottomAppBars;
+    Button btnImagePicker, btnStatteredImage,btnCrudOperations,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +60,20 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(bottomAppbar);
             }
         });
+        btnTopAppBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent topAppBar = new Intent(BoilerPlate.this,TopAppBarActivity.class);
+                startActivity(topAppBar);
+            }
+        });
+        btnRewardScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent reward = new Intent(BoilerPlate.this,RewardScreenActivity.class);
+                startActivity(reward);
+            }
+        });
     }
 
     private void initView() {
@@ -69,5 +83,7 @@ public class BoilerPlate extends AppCompatActivity {
         btnMaterialDesign = findViewById(R.id.button_material_design);
         btnCardView = findViewById(R.id.buttonCardView);
         btnBottomAppBars = findViewById(R.id.bottomAppBars);
+        btnTopAppBar = findViewById(R.id.topNavigationBar);
+        btnRewardScreen = findViewById(R.id.btnRewardUclicks);
     }
 }

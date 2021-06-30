@@ -112,4 +112,34 @@
                 app:menu="@menu/bottom_navigation_label" />
         </RelativeLayout>
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="with animation"
+        android:textColor="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/margin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/simple"
+        android:background="@color/black">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="16dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation_view"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottom_background"
+                app:itemIconTint="@drawable/bottom_navigation_selector"
+                app:menu="@menu/bottom_navigation" />
+        </RelativeLayout>
+    </RelativeLayout>
 </LinearLayout>

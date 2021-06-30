@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="120dp"
+    android:layout_margin="8dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/ic_list_milestone"
+    >
+    <ImageView
+        android:id="@+id/ivCoin"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_coin_icon"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/ivLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivCoin"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/dotted_line_horizontal"/>
+
+    <TextView
+        android:id="@+id/tvReward"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivLine"
+        android:text="REWARDS"
+        android:textSize="10sp"
+        android:textAlignment="center"
+        android:textColor="@color/grey_3"
+        android:fontFamily="@font/dmsans_medium"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/tvRewardCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvReward"
+        android:text="1K"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/dmsans_bold" />
+
+</RelativeLayout>

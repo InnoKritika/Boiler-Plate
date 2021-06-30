@@ -16,64 +16,95 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
+            <android.widget.Button
                 android:id="@+id/btnImagePicker"
                 style="@style/buttonTextAppearance"
                 android:layout_width="match_parent"
+                android:background="@color/magenta_700"
                 android:layout_height="48dp"
                 android:layout_below="@id/ll_number"
                 android:layout_marginTop="8dp"
                 android:text="Image Picker"
                 app:backgroundTint="@color/magenta_700" />
 
-            <com.google.android.material.button.MaterialButton
+            <android.widget.Button
                 android:id="@+id/btnStatteredImage"
                 style="@style/buttonTextAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:background="@color/magenta_700"
+
                 android:layout_below="@id/ll_number"
                 android:layout_marginTop="8dp"
                 android:text="Statered Images"
                 app:backgroundTint="@color/magenta_700" />
 
-            <com.google.android.material.button.MaterialButton
+            <android.widget.Button
                 android:id="@+id/btnCrudOperations"
                 style="@style/buttonTextAppearance"
                 android:layout_width="match_parent"
+                android:background="@color/magenta_700"
+
                 android:layout_height="48dp"
                 android:layout_below="@id/ll_number"
                 android:layout_marginTop="8dp"
                 android:text="Crud Operation"
                 app:backgroundTint="@color/magenta_700" />
 
-            <com.google.android.material.button.MaterialButton
+            <android.widget.Button
                 android:id="@+id/button_material_design"
                 style="@style/buttonTextAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_below="@id/ll_number"
+                android:background="@color/magenta_700"
+
                 android:layout_marginTop="8dp"
                 android:text="Material Design"
                 app:backgroundTint="@color/magenta_700" />
 
-            <com.google.android.material.button.MaterialButton
+            <android.widget.Button
                 android:id="@+id/buttonCardView"
                 style="@style/buttonTextAppearance"
                 android:layout_width="match_parent"
+                android:background="@color/magenta_700"
+
                 android:layout_height="48dp"
                 android:layout_below="@id/ll_number"
                 android:layout_marginTop="8dp"
                 android:text="Card View"
                 app:backgroundTint="@color/magenta_700" />
 
-            <com.google.android.material.button.MaterialButton
+            <android.widget.Button
                 android:id="@+id/bottomAppBars"
                 style="@style/buttonTextAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:background="@color/magenta_700"
+
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:text="Bottom Appbars"
+                app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/topNavigationBar"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/magenta_700"
+
+                android:text="Top Appbars"
+                app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnRewardUclicks"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:background="@color/magenta_700"
+
+                android:layout_height="48dp"
+                android:layout_below="@id/ll_number"
+                android:layout_marginTop="8dp"
+                android:text="Reward screen"
                 app:backgroundTint="@color/magenta_700" />
 
         </LinearLayout>

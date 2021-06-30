@@ -45,11 +45,11 @@
         <activity
             android:name=".Activities.NumberVerificationActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".Activities.VerifyOTPActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".Activities.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -68,6 +68,13 @@
         <activity
             android:name=".Activities.BottomAppBarActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Activities.TopAppBarActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Activities.RewardScreenActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
 
     </application>
 

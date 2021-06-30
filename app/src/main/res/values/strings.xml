@@ -21,4 +21,7 @@
     <string name="resend_otp">Don’t received the code?</string>
 
     <string name="share_earn">Share this app to your friends and earn special rewards</string>
+
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
 </resources>

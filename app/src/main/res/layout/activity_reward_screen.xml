@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1A">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/back_arrow"
+        app:title="Reward"
+        app:titleTextColor="@color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarR"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:id="@+id/llProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="0.2"
+                android:src="@drawable/avatar" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="0.68">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dmsans_bold"
+                    android:text="Alex Garcia"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/userRank1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userName"
+                    android:fontFamily="@font/dmsans_regular"
+                    android:text="Your rank : "
+                    android:textColor="@color/grey_3"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/userRank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userName"
+                    android:layout_toRightOf="@id/userRank1"
+                    android:fontFamily="@font/dmsans_regular"
+                    android:text="1"
+                    android:textColor="@color/grey_3"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.12"
+                android:src="@drawable/ic_badge" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llProfile"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/grey_1_rectangle">
+
+            <LinearLayout
+                android:id="@+id/llReward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/ic_coin_icon" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.55">
+
+                    <TextView
+                        android:id="@+id/totalReward1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/dmsans_medium"
+                        android:text="TOTAL REWARD"
+                        android:textColor="@color/grey_4"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/totalReward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/totalReward1"
+                        android:fontFamily="@font/dmsans_bold"
+                        android:text="500"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <android.widget.Button
+                    android:id="@+id/btnConvert"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.35"
+                    android:background="@drawable/button_orange"
+                    android:drawableLeft="@drawable/ic_gift_icon"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:paddingLeft="10dp"
+                    android:text="Convert"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryDark_trans"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llReward"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp">
+
+                <ImageView
+                    android:id="@+id/ivPhonePay"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_logo_phonepe" />
+
+                <ImageView
+                    android:id="@+id/ivPaytm"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/ivPhonePay"
+                    android:src="@drawable/ic_logo_paytm" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlPayment"
+                android:layout_margin="16dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_color_acent"
+                    android:indeterminate="false"
+                    android:max="1000"
+                    android:progressDrawable="@drawable/progress_drawable"
+                    android:textAlignment="center"
+                    tools:progress="500" />
+
+                <TextView
+                    android:id="@+id/tvStartNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progressBar"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvEndNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progressBar"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/dmsans_medium"
+                    android:text="1000"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/rlInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlProgressBar"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/background_color_acent"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.15"
+                    android:src="@drawable/ic_icon_info" />
+
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.85"
+                    android:fontFamily="@font/dmsans_regular"
+                    android:text="You need 500 more to convert it to ₹1000"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlInfo"
+                android:layout_marginLeft="16dp"
+                android:fontFamily="@font/dmsans_medium"
+                android:text="Next Milestones"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvSeeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlInfo"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/dmsans_medium"
+                android:text="See All"
+                android:textColor="@color/colorPrimaryDark_trans"
+                android:textSize="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNextMileStones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSeeAll"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                tools:itemCount="1"
+                tools:listitem="@layout/list_next_milestone" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
