@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+
+
+    <EditText
+        android:id="@+id/etUpdateName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dmsans_regular"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name" />
+    <Spinner
+        android:id="@+id/spinnerUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/subjects"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btnUpdateStudent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Update" />
+    <Button
+        android:id="@+id/btnDeleteStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete" />
+</LinearLayout>

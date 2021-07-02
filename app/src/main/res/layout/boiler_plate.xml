@@ -39,17 +39,6 @@
                 android:text="Statered Images"
                 app:backgroundTint="@color/magenta_700" />
 
-            <android.widget.Button
-                android:id="@+id/btnCrudOperations"
-                style="@style/buttonTextAppearance"
-                android:layout_width="match_parent"
-                android:background="@color/magenta_700"
-
-                android:layout_height="48dp"
-                android:layout_below="@id/ll_number"
-                android:layout_marginTop="8dp"
-                android:text="Crud Operation"
-                app:backgroundTint="@color/magenta_700" />
 
             <android.widget.Button
                 android:id="@+id/button_material_design"
@@ -107,6 +96,28 @@
                 android:text="Reward screen"
                 app:backgroundTint="@color/magenta_700" />
 
+            <android.widget.Button
+                android:id="@+id/btnDailog"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:background="@color/magenta_700"
+
+                android:layout_height="48dp"
+                android:layout_below="@id/ll_number"
+                android:layout_marginTop="8dp"
+                android:text="Material Dailog"
+                app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnCrudFirebase"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:background="@color/magenta_700"
+
+                android:layout_height="48dp"
+                android:layout_below="@id/ll_number"
+                android:layout_marginTop="8dp"
+                android:text="Firebase Crud Operations"
+                app:backgroundTint="@color/magenta_700" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

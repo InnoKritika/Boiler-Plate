@@ -9,6 +9,14 @@
         <item>relaxation</item>
     </string-array>
 
+    <string-array name="subjects">
+        <item>Maths</item>
+        <item>Biology</item>
+        <item>Commerce</item>
+        <item>Arts</item>
+        <item>Home Science</item>
+    </string-array>
+
     <string name="welcome_head">Welcome to WallPro</string>
     <string name="welcome_detail">4K, HD+ Wallpapers &amp; Background with no ads</string>
 

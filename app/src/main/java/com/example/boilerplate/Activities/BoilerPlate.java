@@ -12,7 +12,8 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
 
 public class BoilerPlate extends AppCompatActivity {
-    Button btnImagePicker, btnStatteredImage,btnCrudOperations,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen;
+    Button btnImagePicker, btnStatteredImage,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen,btnDialog;
+    Button btnCrudFirebase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +33,7 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(statter);
             }
         });
-        btnCrudOperations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent crud = new Intent(BoilerPlate.this,CrudOperations.class);
-                startActivity(crud);
-            }
-        });
+
         btnMaterialDesign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,16 +69,31 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(reward);
             }
         });
+        btnDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dialog = new Intent(BoilerPlate.this,DialogActivity.class);
+                startActivity(dialog);
+            }
+        });
+        btnCrudFirebase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent firebase = new Intent(BoilerPlate.this,CrudFirebaseOperationsActivity.class);
+                startActivity(firebase);
+            }
+        });
     }
 
     private void initView() {
         btnImagePicker = findViewById(R.id.btnImagePicker);
         btnStatteredImage = findViewById(R.id.btnStatteredImage);
-        btnCrudOperations = findViewById(R.id.btnCrudOperations);
         btnMaterialDesign = findViewById(R.id.button_material_design);
         btnCardView = findViewById(R.id.buttonCardView);
         btnBottomAppBars = findViewById(R.id.bottomAppBars);
         btnTopAppBar = findViewById(R.id.topNavigationBar);
         btnRewardScreen = findViewById(R.id.btnRewardUclicks);
+        btnDialog = findViewById(R.id.btnDailog);
+        btnCrudFirebase =  findViewById(R.id.btnCrudFirebase);
     }
 }

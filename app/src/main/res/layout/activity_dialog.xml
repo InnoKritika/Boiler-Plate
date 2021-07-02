@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.widget.Button
+        android:id="@+id/btnAlertDialog"
+        style="@style/buttonTextAppearance"
+        android:layout_width="match_parent"
+        android:background="@color/magenta_700"
+        android:layout_height="48dp"
+        android:layout_below="@id/ll_number"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Alert Dailog"
+        app:backgroundTint="@color/magenta_700" />
+    <android.widget.Button
+        android:id="@+id/btnSimpleDialog"
+        style="@style/buttonTextAppearance"
+        android:layout_width="match_parent"
+        android:background="@color/magenta_700"
+        android:layout_height="48dp"
+        android:layout_below="@id/ll_number"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Simple Dailog"
+        app:backgroundTint="@color/magenta_700" />
+    <android.widget.Button
+        android:id="@+id/btnConfirmationDialog"
+        style="@style/buttonTextAppearance"
+        android:layout_width="match_parent"
+        android:background="@color/magenta_700"
+        android:layout_height="48dp"
+        android:layout_below="@id/ll_number"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Confirmation Dailog"
+        app:backgroundTint="@color/magenta_700"
+        />
+    <android.widget.Button
+        android:id="@+id/btnFullScreenDialog"
+        style="@style/buttonTextAppearance"
+        android:layout_width="match_parent"
+        android:background="@color/magenta_700"
+        android:layout_height="48dp"
+        android:layout_below="@id/ll_number"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Full Screen Dailog"
+        app:backgroundTint="@color/magenta_700" />
+
+</LinearLayout>

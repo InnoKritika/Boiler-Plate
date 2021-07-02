@@ -28,12 +28,6 @@
             android:name=".Activities.StatterdImagesActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".Activities.CrudOperations"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
-            android:name=".Activities.RegistrationActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
             android:name=".Activities.WelcomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
@@ -73,6 +67,12 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.RewardScreenActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Activities.DialogActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Activities.CrudFirebaseOperationsActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
 
