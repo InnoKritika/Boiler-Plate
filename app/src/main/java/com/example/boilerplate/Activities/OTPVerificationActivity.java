@@ -23,7 +23,7 @@ public class OTPVerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_verification);
 
-        etOTP = findViewById(R.id.etOTP);
+        etOTP = findViewById(R.id.etOTP1);
         btnOTPSend = findViewById(R.id.btnSubmitOTP);
         phoneNumber = getIntent().getStringExtra("mobile").toString();
 
