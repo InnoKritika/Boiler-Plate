@@ -18,9 +18,8 @@
 
         <RelativeLayout
             android:id="@+id/ll_profile"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/button_grey1_rectangle"
             android:gravity="center_horizontal"
             android:padding="16dp">
@@ -199,6 +198,7 @@
                 android:layout_height="1dp"
                 android:layout_below="@id/etBio"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/button_grey3_rectangle" />
         </RelativeLayout>
 
@@ -210,6 +210,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="8dp"
             android:text="Continue"
+            android:theme="@style/Theme.MaterialComponents.Light"
             app:backgroundTint="@color/colorPrimaryDark_trans" />
     </RelativeLayout>
 

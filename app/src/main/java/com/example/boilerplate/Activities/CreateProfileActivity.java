@@ -2,7 +2,9 @@ package com.example.boilerplate.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,8 @@ public class CreateProfileActivity extends AppCompatActivity {
 
         initView();
 
+        adjustButtonSize(btnContinue);
+
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,5 +35,16 @@ public class CreateProfileActivity extends AppCompatActivity {
 
     private void initView() {
         btnContinue = findViewById(R.id.button_continue_2);
+    }
+
+    private void adjustButtonSize(MaterialButton btnLogin) {
+
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        int width = displayMetrics.widthPixels;
+        int height = displayMetrics.heightPixels;
+        ViewGroup.LayoutParams params = btnLogin.getLayoutParams();
+        params.height = ((height*75) / 1000);         // 10%
+        params.width = ((width * 100) / 100); // 50%
+        btnLogin.setLayoutParams(params);
     }
 }

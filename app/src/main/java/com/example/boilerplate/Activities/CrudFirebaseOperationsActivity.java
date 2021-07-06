@@ -44,7 +44,7 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_firebase_operations);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("students");
+
         etName = findViewById(R.id.etName);
         btnAdd = findViewById(R.id.btnAddUser);
         spinner = findViewById(R.id.spinnerSubject);
@@ -54,6 +54,8 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
         btnCompleteData = findViewById(R.id.btnFullData);
         btnLimitedData = findViewById(R.id.btnLimitedData);
         btnIndivisualData = findViewById(R.id.btnIndivisualData);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("students");
 
         studentList = new ArrayList<>();
 

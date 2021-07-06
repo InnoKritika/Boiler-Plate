@@ -8,12 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.boilerplate.R;
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.button.MaterialButton;
 
 public class BoilerPlate extends AppCompatActivity {
     Button btnImagePicker, btnStatteredImage,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen,btnDialog;
-    Button btnCrudFirebase;
+    Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +81,20 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(firebase);
             }
         });
+        btnDynamicStorage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent location = new Intent(BoilerPlate.this,DynamicStorageLocationActivity.class);
+                startActivity(location);
+            }
+        });
+        btnOTPVerification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otp = new Intent(BoilerPlate.this,PhoneNumberVerificationActivity.class);
+                startActivity(otp);
+            }
+        });
     }
 
     private void initView() {
@@ -95,5 +107,7 @@ public class BoilerPlate extends AppCompatActivity {
         btnRewardScreen = findViewById(R.id.btnRewardUclicks);
         btnDialog = findViewById(R.id.btnDailog);
         btnCrudFirebase =  findViewById(R.id.btnCrudFirebase);
+        btnDynamicStorage = findViewById(R.id.btnDynamicStorage);
+        btnOTPVerification = findViewById(R.id.btnOTPVerification);
     }
 }

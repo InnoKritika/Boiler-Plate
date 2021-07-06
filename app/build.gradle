@@ -7,6 +7,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+
     defaultConfig {
         applicationId "com.example.boilerplate"
         minSdkVersion 23
@@ -47,7 +51,21 @@ dependencies {
     //dailog plus
     implementation 'com.orhanobut:dialogplus:1.11@aar'
 
+    //download image
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
+    implementation 'com.karumi:dexter:6.2.3'
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //circular imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+
+    implementation 'com.github.codekidX:storage-chooser:2.0.4.4'
+
 
 }

@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar1"
-        android:gravity="center"
-        android:layout_margin="16dp">
+        android:layout_margin="16dp"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/logo"
@@ -43,6 +43,7 @@
             android:layout_below="@id/tvLogin"
             android:layout_marginTop="40dp"
             android:text="@string/generate_otp"
+            android:theme="@style/Theme.MaterialComponents.Light"
             app:backgroundTint="@color/colorPrimaryDark_trans" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -68,6 +69,7 @@
             android:drawableLeft="@drawable/ic_google"
             android:paddingLeft="20dp"
             android:text="Login with Google"
+            android:theme="@style/Theme.MaterialComponents.Light"
             app:backgroundTint="@color/grey_2" />
 
         <com.google.android.material.button.MaterialButton
@@ -80,6 +82,7 @@
             android:drawableLeft="@drawable/ic_facebook_color"
             android:paddingLeft="20dp"
             android:text="Login with Facebook"
+            android:theme="@style/Theme.MaterialComponents.Light"
             app:backgroundTint="@color/grey_2" />
     </RelativeLayout>
 

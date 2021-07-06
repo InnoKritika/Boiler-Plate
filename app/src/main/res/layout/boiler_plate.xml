@@ -118,6 +118,28 @@
                 android:layout_marginTop="8dp"
                 android:text="Firebase Crud Operations"
                 app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnDynamicStorage"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:background="@color/magenta_700"
+
+                android:layout_height="48dp"
+                android:layout_below="@id/ll_number"
+                android:layout_marginTop="8dp"
+                android:text="Dynamic storage file"
+                app:backgroundTint="@color/magenta_700" />
+
+            <android.widget.Button
+                android:id="@+id/btnOTPVerification"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:background="@color/magenta_700"
+                android:layout_height="48dp"
+                android:layout_below="@id/ll_number"
+                android:layout_marginTop="8dp"
+                android:text="OTP Verification"
+                app:backgroundTint="@color/magenta_700" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

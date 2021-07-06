@@ -52,7 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="Login"
-                app:backgroundTint="@color/colorPrimaryDark_trans" />
+                app:backgroundTint="@color/colorPrimaryDark_trans"
+                android:theme="@style/Theme.MaterialComponents.Light"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSignUp"
@@ -62,7 +63,8 @@
                 android:layout_below="@id/btnLogin"
                 android:layout_marginTop="16dp"
                 android:text="Sign Up"
-                app:backgroundTint="@color/grey_2" />
+                app:backgroundTint="@color/grey_2"
+                android:theme="@style/Theme.MaterialComponents.Light"/>
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>
