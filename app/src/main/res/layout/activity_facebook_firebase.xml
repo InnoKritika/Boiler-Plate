@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFacebookButton"
+        style="@style/buttonTextAppearance"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tvOR"
+        android:layout_marginTop="16dp"
+        android:layout_margin="16dp"
+        android:drawableLeft="@drawable/ic_facebook_color"
+        android:paddingLeft="20dp"
+        android:text="Login with Google"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:backgroundTint="@color/grey_2" />
+
+</LinearLayout>

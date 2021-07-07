@@ -26,75 +26,45 @@ import java.util.concurrent.TimeUnit;
 
 public class NumberVerificationActivity extends AppCompatActivity {
 
-    Button btnGenerateOTP, btnSignIn;
+    Button btnGenerateOTP;
 
-    EditText etPhoneNumber, etOTP;
+    EditText etPhoneNumber;
 
-    String phoneNumber, otp;
+    String phoneNumber;
 
-    FirebaseAuth auth;
-
-    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback;
-    private String verificationCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_number_otp);
+        setContentView(R.layout.activity_number_verification);
         findViews();
 
-        StartFirebaseLogin();
+//        StartFirebaseLogin();
 
         btnGenerateOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                phoneNumber=etPhoneNumber.getText().toString();
-
-                PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                        phoneNumber,                     // Phone number to verify
-                        60,                           // Timeout duration
-                        TimeUnit.SECONDS,                // Unit of timeout
-                        NumberVerificationActivity.this,        // Activity (for callback binding)
-                        mCallback);                      // OnVerificationStateChangedCallbacks
+                phoneNumber="+91"+etPhoneNumber.getText().toString();
+                Intent sendUser = new Intent(getApplicationContext(),VerifyOTPActivity.class);
+                sendUser.putExtra("number",phoneNumber);
+                startActivity(sendUser);
             }
         });
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                otp=etOTP.getText().toString();
-
-                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode, otp);
-
-                SigninWithPhone(credential);
-            }
-        });
+        /**/
     }
 
-    private void SigninWithPhone(PhoneAuthCredential credential) {
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            startActivity(new Intent(NumberVerificationActivity.this,MainActivity.class));
-                            finish();
-                        } else {
-                            Toast.makeText(NumberVerificationActivity.this,"Incorrect OTP",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
+
 
     private void findViews() {
-        btnGenerateOTP=findViewById(R.id.btnNumber);
-        btnSignIn=findViewById(R.id.btnContinue1);
+        btnGenerateOTP=findViewById(R.id.btnSendOTP);
+//        btnSignIn=findViewById(R.id.btnContinue1);
 
-        etPhoneNumber=findViewById(R.id.etNumber);
-        etOTP=findViewById(R.id.etOtP);
+        etPhoneNumber=findViewById(R.id.et_number);
+//        etOTP=findViewById(R.id.etOtP);
     }
 
-    private void StartFirebaseLogin() {
+    /*private void StartFirebaseLogin() {
 
         auth = FirebaseAuth.getInstance();
         mCallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -114,8 +84,12 @@ public class NumberVerificationActivity extends AppCompatActivity {
                 super.onCodeSent(s, forceResendingToken);
                 verificationCode = s;
                 Toast.makeText(NumberVerificationActivity.this,"Code sent",Toast.LENGTH_SHORT).show();
+                Intent sendUser = new Intent(getApplicationContext(),VerifyOTPActivity.class);
+                sendUser.putExtra("number",phoneNumber);
+                sendUser.putExtra("otp",verificationCode);
+                startActivity(sendUser);
             }
         };
-    }
+    }*/
 
 }

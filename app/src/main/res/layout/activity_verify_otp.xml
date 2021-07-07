@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_screen_detail"
-            android:text="(+91)"
+            android:text=""
             android:textColor="@color/colorPrimaryDark_trans" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -52,7 +52,7 @@
 
             <EditText
                 android:id="@+id/OTP1"
-                android:layout_width="62dp"
+                android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="@drawable/border_orange"
                 android:gravity="center"
@@ -60,9 +60,9 @@
 
             <EditText
                 android:id="@+id/OTP2"
-                android:layout_width="62dp"
+                android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/OTP1"
                 android:background="@drawable/border_orange"
                 android:gravity="center"
@@ -70,9 +70,9 @@
 
             <EditText
                 android:id="@+id/OTP3"
-                android:layout_width="62dp"
+                android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/OTP2"
                 android:background="@drawable/border_orange"
                 android:gravity="center"
@@ -80,11 +80,29 @@
 
             <EditText
                 android:id="@+id/OTP4"
-                android:layout_width="62dp"
+                android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/OTP3"
                 android:background="@drawable/border_orange"
+                android:gravity="center"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/OTP5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/border_orange"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/OTP4"
+                android:gravity="center"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/OTP6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/border_orange"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/OTP5"
                 android:gravity="center"
                 android:inputType="number" />
 
@@ -94,7 +112,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/OTP1"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="14sp"
                 android:layout_marginTop="24dp"
                 android:text="@string/resend_otp"
                 android:textColor="@color/grey_3" />
@@ -106,6 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/OTP3"
                 android:layout_marginTop="24dp"
+                android:textSize="16dp"
                 android:layout_toRightOf="@id/tv_resend"
                 android:text="Resend-OTP"
                 android:textColor="@color/colorPrimaryDark_trans" />

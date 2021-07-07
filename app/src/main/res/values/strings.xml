@@ -32,4 +32,19 @@
 
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+    //facebook
+    <string name="facebook_app_id">4235946666486879</string>
+    <string name="fb_login_protocol_scheme">fb4235946666486879</string>
+
+    //OnBoarding
+    <string name="onBoardTile1">HD, 4K &amp; Unique Wallpapers</string>
+    <string name="onBoardTile2">Get Paid for your Camera click\'s</string>
+    <string name="onBoardTile3">#1 Rank in our top Leaderboard!</string>
+
+    <string name="onBoardDetail1">Device Specific, Refreshing every 6 hours of a day.</string>
+    <string name="onBoardDetail2">Yes Right! Now you can get paid for your awesome captures using your phone.</string>
+    <string name="onBoardDetail3">Get +1 reward for per download or like. 1K reward will pay you up-to 1000 ₹. Get certificate from WallPro at 1M downloads.</string>
+
+
 </resources>

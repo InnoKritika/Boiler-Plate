@@ -11,7 +11,7 @@ import com.example.boilerplate.R;
 
 public class BoilerPlate extends AppCompatActivity {
     Button btnImagePicker, btnStatteredImage,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen,btnDialog;
-    Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification;
+    Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification,btnGoogleSignin,btnFacebookSignin,btnUclicks;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +95,27 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(otp);
             }
         });
+        btnGoogleSignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent google = new Intent(BoilerPlate.this,GoogleFirebaseActivity.class);
+                startActivity(google);
+            }
+        });
+        btnFacebookSignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent facebook = new Intent(BoilerPlate.this,FacebookFirebaseActivity.class);
+                startActivity(facebook);
+            }
+        });
+        btnUclicks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent uclicks = new Intent(getApplicationContext(),WelcomeActivity.class);
+                startActivity(uclicks);
+            }
+        });
     }
 
     private void initView() {
@@ -109,5 +130,8 @@ public class BoilerPlate extends AppCompatActivity {
         btnCrudFirebase =  findViewById(R.id.btnCrudFirebase);
         btnDynamicStorage = findViewById(R.id.btnDynamicStorage);
         btnOTPVerification = findViewById(R.id.btnOTPVerification);
+        btnGoogleSignin = findViewById(R.id.btnGoogleSignin);
+        btnFacebookSignin = findViewById(R.id.btnFacebookSignin);
+        btnUclicks = findViewById(R.id.btnUclicks);
     }
 }

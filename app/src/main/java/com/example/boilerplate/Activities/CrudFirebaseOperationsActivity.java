@@ -104,7 +104,7 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
         btnLimitedData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Query query3 = FirebaseDatabase.getInstance().getReference("students").limitToFirst(2).limitToLast(6);
+                Query query3 = FirebaseDatabase.getInstance().getReference("students").startAt(3).endAt(8);
                 query3.addListenerForSingleValueEvent(valueEventListener);
             }
         });

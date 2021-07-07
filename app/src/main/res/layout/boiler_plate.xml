@@ -140,6 +140,36 @@
                 android:layout_marginTop="8dp"
                 android:text="OTP Verification"
                 app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnGoogleSignin"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/magenta_700"
+
+                android:text="Google Firebase"
+                app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnFacebookSignin"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/magenta_700"
+
+                android:text="Facebook Login Firebase"
+                app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnUclicks"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/magenta_700"
+
+                android:text="Uclicks"
+                app:backgroundTint="@color/magenta_700" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
