@@ -11,7 +11,7 @@ import com.example.boilerplate.R;
 
 public class BoilerPlate extends AppCompatActivity {
     Button btnImagePicker, btnStatteredImage,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen,btnDialog;
-    Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification,btnGoogleSignin,btnFacebookSignin,btnUclicks;
+    Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification,btnGoogleSignin,btnFacebookSignin,btnUclicks,btnMultipleCategory,btnHashmapDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +116,20 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(uclicks);
             }
         });
+        btnMultipleCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent category = new Intent(getApplicationContext(),MultiipleCategoryDataFirebase.class);
+                startActivity(category);
+            }
+        });
+        btnHashmapDatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hashmap = new Intent(getApplicationContext(),HashmapFirebaseActivity.class);
+                startActivity(hashmap);
+            }
+        });
     }
 
     private void initView() {
@@ -133,5 +147,7 @@ public class BoilerPlate extends AppCompatActivity {
         btnGoogleSignin = findViewById(R.id.btnGoogleSignin);
         btnFacebookSignin = findViewById(R.id.btnFacebookSignin);
         btnUclicks = findViewById(R.id.btnUclicks);
+        btnMultipleCategory = findViewById(R.id.btnMultipleCategory);
+        btnHashmapDatabase = findViewById(R.id.btnHashmapDatabase);
     }
 }

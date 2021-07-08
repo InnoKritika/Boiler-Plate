@@ -114,6 +114,4 @@ public class GoogleFirebaseActivity extends AppCompatActivity {
                 });
     }
 
-    private void updateUI(Object o) {
-    }
 }

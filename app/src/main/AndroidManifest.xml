@@ -97,7 +97,9 @@
         <activity
             android:name=".Activities.FacebookFirebaseActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-
+        <activity
+            android:name=".Activities.MultiipleCategoryDataFirebase"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
     </application>
 

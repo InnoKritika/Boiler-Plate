@@ -2,7 +2,9 @@ package com.example.boilerplate.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 
 public class NumberVerificationActivity extends AppCompatActivity {
 
-    Button btnGenerateOTP;
+    MaterialButton btnGenerateOTP;
 
     EditText etPhoneNumber;
 
@@ -40,6 +42,7 @@ public class NumberVerificationActivity extends AppCompatActivity {
         findViews();
 
 //        StartFirebaseLogin();
+        adjustButtonSize( btnGenerateOTP);
 
         btnGenerateOTP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,16 @@ public class NumberVerificationActivity extends AppCompatActivity {
     }
 
 
+    private void adjustButtonSize(MaterialButton btnLogin) {
+
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        int width = displayMetrics.widthPixels;
+        int height = displayMetrics.heightPixels;
+        ViewGroup.LayoutParams params = btnLogin.getLayoutParams();
+        params.height = ((height*75) / 1000);         // 10%
+        params.width = ((width * 100) / 100); // 50%
+        btnLogin.setLayoutParams(params);
+    }
 
     private void findViews() {
         btnGenerateOTP=findViewById(R.id.btnSendOTP);

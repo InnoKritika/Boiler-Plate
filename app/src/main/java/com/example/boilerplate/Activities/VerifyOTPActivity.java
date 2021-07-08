@@ -2,8 +2,10 @@ package com.example.boilerplate.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,6 +62,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
         StartFirebaseLogin();
 
+        adjustButtonSize(btnContinue);
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 number,                     // Phone number to verify
                 60,                           // Timeout duration
@@ -89,13 +92,25 @@ public class VerifyOTPActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            Toast.makeText(VerifyOTPActivity.this, "Process completed", Toast.LENGTH_SHORT).show();
+                            Intent send = new Intent(getApplicationContext(),MainActivity.class);
+                            startActivity(send);
                             finish();
                         } else {
                             Toast.makeText(getApplicationContext(),"Incorrect OTP",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+    private void adjustButtonSize(MaterialButton btnLogin) {
+
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        int width = displayMetrics.widthPixels;
+        int height = displayMetrics.heightPixels;
+        ViewGroup.LayoutParams params = btnLogin.getLayoutParams();
+        params.height = ((height*75) / 1000);         // 10%
+        params.width = ((width * 100) / 100); // 50%
+        btnLogin.setLayoutParams(params);
     }
     private void StartFirebaseLogin() {
 

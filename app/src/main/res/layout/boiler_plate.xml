@@ -170,6 +170,26 @@
 
                 android:text="Uclicks"
                 app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnMultipleCategory"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/magenta_700"
+
+                android:text="Multiple Category data"
+                app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnHashmapDatabase"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/magenta_700"
+
+                android:text="Hashmap firebase database"
+                app:backgroundTint="@color/magenta_700" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

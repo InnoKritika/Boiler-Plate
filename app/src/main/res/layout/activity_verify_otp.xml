@@ -56,6 +56,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/border_orange"
                 android:gravity="center"
+                android:maxLength="1"
                 android:inputType="number" />
 
             <EditText
@@ -66,6 +67,7 @@
                 android:layout_toRightOf="@id/OTP1"
                 android:background="@drawable/border_orange"
                 android:gravity="center"
+                android:maxLength="1"
                 android:inputType="number" />
 
             <EditText
@@ -76,6 +78,7 @@
                 android:layout_toRightOf="@id/OTP2"
                 android:background="@drawable/border_orange"
                 android:gravity="center"
+                android:maxLength="1"
                 android:inputType="number" />
 
             <EditText
@@ -86,6 +89,7 @@
                 android:layout_toRightOf="@id/OTP3"
                 android:background="@drawable/border_orange"
                 android:gravity="center"
+                android:maxLength="1"
                 android:inputType="number" />
             <EditText
                 android:id="@+id/OTP5"
@@ -95,6 +99,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/OTP4"
                 android:gravity="center"
+                android:maxLength="1"
                 android:inputType="number" />
             <EditText
                 android:id="@+id/OTP6"
@@ -104,6 +109,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/OTP5"
                 android:gravity="center"
+                android:maxLength="1"
                 android:inputType="number" />
 
             <com.google.android.material.textview.MaterialTextView
