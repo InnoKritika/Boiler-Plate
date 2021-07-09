@@ -126,7 +126,7 @@ public class BoilerPlate extends AppCompatActivity {
         btnHashmapDatabase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent hashmap = new Intent(getApplicationContext(),HashmapFirebaseActivity.class);
+                Intent hashmap = new Intent(getApplicationContext(), GetWallPaperActivity.class);
                 startActivity(hashmap);
             }
         });

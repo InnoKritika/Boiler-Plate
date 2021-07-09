@@ -1,17 +1,22 @@
 package com.example.boilerplate.ModelClasses;
 
-public class Image {
-    int image;
+import java.io.Serializable;
 
-    public int getImage() {
-        return image;
+public class Image implements Serializable {
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public Image(int image) {
-        this.image = image;
+    public Image(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Image() {
     }
 }

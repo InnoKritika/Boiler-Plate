@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.boilerplate">
 
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
 
     <application
         android:allowBackup="true"
@@ -100,7 +102,13 @@
         <activity
             android:name=".Activities.MultiipleCategoryDataFirebase"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Activities.SetWallPaperActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
+        <activity
+            android:name=".Activities.GetWallPaperActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

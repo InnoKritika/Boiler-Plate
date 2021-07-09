@@ -29,7 +29,7 @@ public class SwapCardViewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_view);
-        recyclerView = findViewById(R.id.rvCardView);
+        /*recyclerView = findViewById(R.id.rvCardView);
         arrayList  =new ArrayList<>();
 
         arrayList.add(new Image(R.drawable.image10));
@@ -49,11 +49,11 @@ public class SwapCardViewActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
-        itemTouchHelper.attachToRecyclerView(recyclerView);
+        itemTouchHelper.attachToRecyclerView(recyclerView);*/
 
     }
 
-    Image deletedItem = null;
+    /*Image deletedItem = null;
     ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback( ItemTouchHelper.UP |ItemTouchHelper.DOWN
     | ItemTouchHelper.START|ItemTouchHelper.END|ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT,0) {
         @Override
@@ -91,5 +91,5 @@ public class SwapCardViewActivity extends AppCompatActivity {
             }
 
         }
-    };
+    };*/
 }

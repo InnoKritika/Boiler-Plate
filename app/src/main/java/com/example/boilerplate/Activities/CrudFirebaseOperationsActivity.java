@@ -70,6 +70,8 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(CrudFirebaseOperationsActivity.this, "Long clicked", Toast.LENGTH_SHORT).show();
                 Crud crud = studentList.get(position);
                 updateDialog(crud.getUserId(), crud.getName());
 

@@ -21,7 +21,7 @@ public class StatterdImagesActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statterd_image);
-        recyclerView = findViewById(R.id.rv);
+        /*recyclerView = findViewById(R.id.rv);
         arrayList  =new ArrayList<>();
 
         arrayList.add(new Image(R.drawable.image10));
@@ -38,7 +38,7 @@ public class StatterdImagesActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         adapter = new ImageAdapter(getApplicationContext(),arrayList);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);*/
 
     }
 }
