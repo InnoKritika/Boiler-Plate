@@ -48,7 +48,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             public void onClick(View v) {
 //                Log.i("image clicked","=====>"+arrayList.get(position));
 //                Log.i("image clickedURL","=====>"+arrayList.get(position).getImageUrl());
-                wallpaperInterface.wallpaperDetail(arrayList.get(position),v,position);
+                wallpaperInterface.wallpaperDetail(arrayList,v,position);
 //                Log.i("objectUrl","====>"+arrayList.get(position).getImageUrl());
             }
         });

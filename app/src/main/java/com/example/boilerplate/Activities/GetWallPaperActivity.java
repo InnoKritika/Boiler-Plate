@@ -78,11 +78,13 @@ public class GetWallPaperActivity extends AppCompatActivity implements Wallpaper
     }
 
     @Override
-    public void wallpaperDetail(Image image1, View view, int position) {
+    public void wallpaperDetail(ArrayList<Image> images, View view, int position) {
         Intent detail = new Intent(GetWallPaperActivity.this,SetWallPaperActivity.class);
-        detail.putExtra("image", image1);
-        Log.i("imageObjectSend","=====>"+image1);
-        Log.i("imageUrlSend","=====>"+image1.getImageUrl());
+        detail.putExtra("imageList", images);
+        detail.putExtra("imagePosition",position+"");
+        Log.i("iamge List","=====>"+images);
+        Log.i("iamge position","=====>"+images.get(position));
+        Log.i("imageUrlSend","=====>"+images.get(position).getImageUrl());
         startActivity(detail);
     }
 }
