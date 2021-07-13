@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -49,9 +50,9 @@ public class SetWallPaperActivity extends AppCompatActivity {
     Image image;
     String imageUrl,imageUrlLeft,imageUrlRight,pos;
     ArrayList<Image> images;
-    SwipeListener swipeListener;
+//    SwipeListener swipeListener;
     RelativeLayout relativeLayout;
-    int position;
+    int position,height,width;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,12 @@ public class SetWallPaperActivity extends AppCompatActivity {
 
         Glide.with(SetWallPaperActivity.this).load(imageUrl).into(imageFull);
 
-        imageFull.setOnTouchListener(new View.OnTouchListener() {
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        height = metrics.heightPixels;
+        width = metrics.widthPixels;
+
+       /* imageFull.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
@@ -97,9 +103,37 @@ public class SetWallPaperActivity extends AppCompatActivity {
                 }
                 return false;
             }
+        });*/
+
+        Log.i("imageUrlCurrent","===>"+imageUrl);
+        imageFull.setOnTouchListener(new OnSwipeGesture(SetWallPaperActivity.this){
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                imageUrlLeft = images.get(position-1).getImageUrl();
+                Glide.with(SetWallPaperActivity.this).load(imageUrlLeft).into(imageFull);
+                Log.i("imageUrlLeft","===>"+imageUrlLeft);
+                imageUrl = imageUrlLeft;
+
+            }
         });
 
-        swipeListener = new SwipeListener(relativeLayout);
+        Log.i("imageUrlUpdated","===>"+imageUrl);
+        imageFull.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tv.getVisibility() == View.GONE){
+                    tv.animate().alpha(1.0f).setDuration(500);
+                    tv.setVisibility(View.VISIBLE);
+                }
+                else {
+                    tv.animate().alpha(0.0f).setDuration(500);
+                    tv.setVisibility(View.GONE);
+                }
+            }
+        });
+
+//        swipeListener = new SwipeListener(relativeLayout);
 
         btnApply.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,7 +171,8 @@ public class SetWallPaperActivity extends AppCompatActivity {
 
                                 try {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                        wallpaperManager.setBitmap(resource, null, true, WallpaperManager.FLAG_LOCK);
+                                        Bitmap bitmap = Bitmap.createScaledBitmap(resource,width,height,true);
+                                        wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK);
                                         progressDialog.dismiss();
                                         bottomSheetDialog.dismiss();
                                         Toast.makeText(SetWallPaperActivity.this, "WallPaper set to Lock screen", Toast.LENGTH_SHORT).show();
@@ -173,7 +208,8 @@ public class SetWallPaperActivity extends AppCompatActivity {
 
                                 try {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                        wallpaperManager.setBitmap(resource);
+                                        Bitmap bitmap = Bitmap.createScaledBitmap(resource,width,height,true);
+                                        wallpaperManager.setBitmap(bitmap);
                                         progressDialog.dismiss();
                                         bottomSheetDialog.dismiss();
                                         Toast.makeText(SetWallPaperActivity.this, "WallPaper set to Home screen", Toast.LENGTH_SHORT).show();
@@ -209,8 +245,9 @@ public class SetWallPaperActivity extends AppCompatActivity {
 
                                 try {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                        wallpaperManager.setBitmap(resource);
-                                        wallpaperManager.setBitmap(resource, null, true, WallpaperManager.FLAG_LOCK);
+                                        Bitmap bitmap = Bitmap.createScaledBitmap(resource,width,height,true);
+                                        wallpaperManager.setBitmap(bitmap);
+                                        wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK);
                                         progressDialog.dismiss();
                                         bottomSheetDialog.dismiss();
                                         Toast.makeText(SetWallPaperActivity.this, "WallPaper set to Home screen", Toast.LENGTH_SHORT).show();
@@ -228,7 +265,7 @@ public class SetWallPaperActivity extends AppCompatActivity {
         bottomSheetDialog.show();
     }
 
-    private class SwipeListener implements View.OnTouchListener {
+    /*private class SwipeListener implements View.OnTouchListener {
         GestureDetector gestureDetector;
 
         SwipeListener(View view) {
@@ -265,7 +302,7 @@ public class SetWallPaperActivity extends AppCompatActivity {
         public boolean onTouch(View v, MotionEvent event) {
             return gestureDetector.onTouchEvent(event);
         }
-    }
+    }*/
 }
 
 
