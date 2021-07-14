@@ -24,12 +24,15 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.example.boilerplate.Adapters.ViewPagerAdapter;
 import com.example.boilerplate.ModelClasses.Image;
 import com.example.boilerplate.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -47,6 +50,8 @@ public class SetWallPaperActivity extends AppCompatActivity {
     Button btnApply;
     TextView tv;
     ProgressDialog progressDialog;
+    ViewPagerAdapter viewPagerAdapter;
+    ViewPager viewPager2;
     Image image;
     String imageUrl,imageUrlLeft,imageUrlRight,pos;
     ArrayList<Image> images;
@@ -59,20 +64,24 @@ public class SetWallPaperActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hashmap_firebase);
 
-        imageFull = findViewById(R.id.imageView);
+        addViewPage();
+
+        imageFull = findViewById(R.id.image2);
         tv = findViewById(R.id.textView3);
-        image2 = findViewById(R.id.image2);
         btnApply = findViewById(R.id.btnApply);
         relativeLayout = findViewById(R.id.relativeLayout);
         progressDialog = new ProgressDialog(SetWallPaperActivity.this);
+//        viewPager2 = findViewById(R.id.viewPager);
 
         images = (ArrayList<Image>) getIntent().getSerializableExtra("imageList");
+        Log.i("imageList","======>"+images);
         pos = (String) getIntent().getSerializableExtra("imagePosition");
 
         position = Integer.parseInt(pos);
         Log.i("position","======>"+position);
 
         imageUrl = images.get(position).getImageUrl();
+        Log.i("imageUrlRecieved","=====>"+imageUrl);
 
         Glide.with(SetWallPaperActivity.this).load(imageUrl).into(imageFull);
 
@@ -80,6 +89,14 @@ public class SetWallPaperActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         height = metrics.heightPixels;
         width = metrics.widthPixels;
+        //viewpager
+        viewPager2 = findViewById(R.id.viewPager);
+        Log.i("imageList","======>"+images);
+        viewPagerAdapter = new ViewPagerAdapter(SetWallPaperActivity.this,images);
+        viewPager2.setAdapter(viewPagerAdapter);
+        viewPager2.setCurrentItem(position);
+        viewPagerAdapter.notifyDataSetChanged();
+        Log.i("viewpagerImageUrl","=====>"+images.get(viewPager2.getCurrentItem()).getImageUrl());
 
        /* imageFull.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -105,20 +122,35 @@ public class SetWallPaperActivity extends AppCompatActivity {
             }
         });*/
 
-        Log.i("imageUrlCurrent","===>"+imageUrl);
+        /*Log.i("imageUrlCurrent","===>"+imageUrl);
+        imageUrlLeft = images.get(position-1).getImageUrl();
+        imageUrlRight = images.get(position+1).getImageUrl();
         imageFull.setOnTouchListener(new OnSwipeGesture(SetWallPaperActivity.this){
             @Override
             public void onSwipeLeft() {
-                super.onSwipeLeft();
-                imageUrlLeft = images.get(position-1).getImageUrl();
+                Log.i("is Touched","===>");
                 Glide.with(SetWallPaperActivity.this).load(imageUrlLeft).into(imageFull);
                 Log.i("imageUrlLeft","===>"+imageUrlLeft);
-                imageUrl = imageUrlLeft;
+//                position = position-1;
+                images.get(position).setImageUrl(imageUrlLeft);
+                Log.i("imageUrlUpdated","===>"+imageUrl);
+                super.onSwipeLeft();
+//                imageUrlLeft = images.get(position-1).getImageUrl();
+            }
+
+            @Override
+            public void onSwipeRight() {
+                Log.i("is Touched","===>");
+                Glide.with(SetWallPaperActivity.this).load(imageUrlRight).into(imageFull);
+                Log.i("imageUrlRight","===>"+imageUrlRight);
+                imageUrl = imageUrlRight;
+                Log.i("imageUrlUpdated","===>"+imageUrl);
+                super.onSwipeRight();
 
             }
         });
+*/
 
-        Log.i("imageUrlUpdated","===>"+imageUrl);
         imageFull.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,6 +177,11 @@ public class SetWallPaperActivity extends AppCompatActivity {
         });
     }
 
+    private void addViewPage() {
+
+
+    }
+
     public void setWallPaper() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(SetWallPaperActivity.this, R.style.BottomsheetDialogTheme);
         View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.bottom_sheet_wallpaper,
@@ -156,7 +193,7 @@ public class SetWallPaperActivity extends AppCompatActivity {
                 progressDialog.show();
                 final WallpaperManager wallpaperManager = WallpaperManager.getInstance(SetWallPaperActivity.this);
                 Glide.with(SetWallPaperActivity.this)
-                        .asBitmap().load(imageUrl)
+                        .asBitmap().load(images.get(viewPager2.getCurrentItem()).getImageUrl())
                         .listener(new RequestListener<Bitmap>() {
                             @Override
                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
@@ -193,7 +230,7 @@ public class SetWallPaperActivity extends AppCompatActivity {
                 progressDialog.show();
                 final WallpaperManager wallpaperManager = WallpaperManager.getInstance(SetWallPaperActivity.this);
                 Glide.with(SetWallPaperActivity.this)
-                        .asBitmap().load(imageUrl)
+                        .asBitmap().load(images.get(viewPager2.getCurrentItem()).getImageUrl())
                         .listener(new RequestListener<Bitmap>() {
                             @Override
                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
@@ -230,7 +267,7 @@ public class SetWallPaperActivity extends AppCompatActivity {
                 progressDialog.show();
                 final WallpaperManager wallpaperManager = WallpaperManager.getInstance(SetWallPaperActivity.this);
                 Glide.with(SetWallPaperActivity.this)
-                        .asBitmap().load(imageUrl)
+                        .asBitmap().load(images.get(viewPager2.getCurrentItem()).getImageUrl())
                         .listener(new RequestListener<Bitmap>() {
                             @Override
                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {

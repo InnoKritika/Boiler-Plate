@@ -4,8 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.viewpager2.widget.ViewPager2
+    <ImageView
+        android:id="@+id/imageViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/viewPager"/>
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart | fitEnd"
+        android:src="@drawable/image13" />
 </LinearLayout>
