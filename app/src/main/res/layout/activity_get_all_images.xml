@@ -4,10 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageViewPager"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvImages"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:src="@drawable/image13" />
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -190,6 +190,16 @@
 
                 android:text="Hashmap firebase database"
                 app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnGetAllImages"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/magenta_700"
+
+                android:text="Get all images(gallery)"
+                app:backgroundTint="@color/magenta_700" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

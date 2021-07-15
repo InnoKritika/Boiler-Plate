@@ -11,7 +11,7 @@ import com.example.boilerplate.R;
 
 public class BoilerPlate extends AppCompatActivity {
     Button btnImagePicker, btnStatteredImage,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen,btnDialog;
-    Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification,btnGoogleSignin,btnFacebookSignin,btnUclicks,btnMultipleCategory,btnHashmapDatabase;
+    Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification,btnGoogleSignin,btnFacebookSignin,btnUclicks,btnMultipleCategory,btnHashmapDatabase,btnGetAllImages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +130,13 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(hashmap);
             }
         });
+        btnGetAllImages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gallery = new Intent(getApplicationContext(), GetAllImagesActivity.class);
+                startActivity(gallery);
+            }
+        });
     }
 
     private void initView() {
@@ -149,5 +156,6 @@ public class BoilerPlate extends AppCompatActivity {
         btnUclicks = findViewById(R.id.btnUclicks);
         btnMultipleCategory = findViewById(R.id.btnMultipleCategory);
         btnHashmapDatabase = findViewById(R.id.btnHashmapDatabase);
+        btnGetAllImages = findViewById(R.id.btnGetAllImages);
     }
 }
