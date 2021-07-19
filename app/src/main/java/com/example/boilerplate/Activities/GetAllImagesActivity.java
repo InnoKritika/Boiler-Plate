@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,7 +15,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -25,14 +23,14 @@ import com.example.boilerplate.R;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GetAllImagesActivity extends AppCompatActivity {
     RecyclerView rvImages;
-    ArrayList<File> myFiles;
     AllImagesAdapter adapter;
     ArrayList<String> images;
     ArrayList<String> fileList = new ArrayList<>();
-    String directory, imageDirectory;
+    String directory;
     ArrayList<String> directoryList = new ArrayList<>();
     Spinner spinnerDirectory;
     String selectedDirectory;
@@ -63,16 +61,14 @@ public class GetAllImagesActivity extends AppCompatActivity {
 //
 
         listDir();
-
-        myFiles = new ArrayList<>();
         images = new ArrayList<>();
 
-
-        Toast.makeText(GetAllImagesActivity.this, "selected "+selectedDirectory, Toast.LENGTH_SHORT).show();
+//
+//        Toast.makeText(GetAllImagesActivity.this, "selected "+selectedDirectory, Toast.LENGTH_SHORT).show();
 
 //        rvImages.setHasFixedSize(true);
 
-        displayImages();
+//       findImage();
 //
 //        selectedDirectory = spinnerDirectory.getSelectedItem().toString();
 //        Toast.makeText(this, selectedDirectory, Toast.LENGTH_SHORT).show();
@@ -82,46 +78,99 @@ public class GetAllImagesActivity extends AppCompatActivity {
     private void listDir() {
         File filep = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
 
-        ArrayList<File> imageList = new ArrayList<>();
         File[] files = filep.listFiles();
         fileList.clear();
         for (File file : files) {
-            fileList.add(file.getPath());
+            if (file.isDirectory() && !file.isHidden()) {
+                File[] fileR = file.listFiles();
+                for (File fileG : fileR){
+                    if (fileG.getName().endsWith(".jpg")){
+                        fileList.add(file.getName());
+                        break;
+                    }/*else if (fileG.isDirectory() &&!fileG.isHidden()){
+                        File[] fileK = fileG.listFiles();
+                        for (File fileM : fileK){
+                            if (fileM.getName().endsWith(".jpg")){
+                                fileList.add(fileG.getName());
+                                break;
+                            }
+                        }
+                    }*/
+                }
+            }
+//             fileList.add(file.getName());
         }
-        for (int i = 0; i < fileList.size(); i++) {
+        /*for (int i = 0; i < fileList.size(); i++) {
             Log.i(" " + (i + 1), ".  " + fileList.get(i));
-            String paths[] = fileList.get(i).split("/");
-            directory = "" + paths[paths.length - 1];
+            String paths[] = fileList.get(i).split("/",5);
+            this.directory = "" + paths[paths.length-1];
 
-            directoryList.add(directory);
+            directoryList.add(this.directory);
 
+        }*/
+
+        for (int i = 0; i<fileList.size();i++){
+            Log.e("directory List ","===>"+ fileList.get(i));
         }
-        adapterDirectory = new ArrayAdapter(GetAllImagesActivity.this, R.layout.support_simple_spinner_dropdown_item, directoryList);
+        adapterDirectory = new ArrayAdapter<>(GetAllImagesActivity.this, android.R.layout.simple_spinner_item, fileList);
         adapterDirectory.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinnerDirectory.setAdapter(adapterDirectory);
+        spinnerDirectory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedDirectoryP = parent.getSelectedItem().toString();
+                Log.e("directroyyyy","====>"+selectedDirectoryP);
+                File file = new File(Environment.getExternalStorageDirectory(),selectedDirectoryP);
+                Log.e("directory path get ","====>"+selectedDirectoryP);
 
+                images.clear();
+                ArrayList<File> imageList = new ArrayList<>();
+                File[] imageFile = file.listFiles();
+                for (File files : imageFile) {
+                    if (files.isDirectory() && !files.isHidden()) {
+                        File[] fileQ = files.listFiles();
+                        for (File fileo : fileQ){
+                            if (fileo.getName().endsWith(".jpg")){
+                                imageList.add(fileo);
+                            }
+                        }
+                    } else {
+                        if (files.getName().endsWith(".jpg")) {
+                            imageList.add(files);
+                        }
+                    }
+                }
+                for (int i = 0; i < imageList.size(); i++) {
+//            Log.i("imagePath","====>"+myFiles.get(i).getAbsolutePath());
+                    images.add((imageList.get(i).getAbsolutePath()));
+
+                }
+                adapter = new AllImagesAdapter(GetAllImagesActivity.this, images);
+                rvImages.setAdapter(adapter);
+                rvImages.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+
+                Log.e("imageListSize", "====>" + imageList.size());
+                Toast.makeText(GetAllImagesActivity.this, "imageListSize          " + imageList.size(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         //Toast.makeText(this,spinnerDirectory.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
     }
 
     private void displayImages() {
 
 
-        myFiles = findImage(Environment.getExternalStorageDirectory());
-        Log.e("imageListSize", "====>" + myFiles.size());
-        Toast.makeText(this, "imageListSize          " + myFiles.size(), Toast.LENGTH_SHORT).show();
 
-        for (int i = 0; i < myFiles.size(); i++) {
-//            Log.i("imagePath","====>"+myFiles.get(i).getAbsolutePath());
-            images.add((myFiles.get(i).getAbsolutePath()));
 
-        }
-        adapter = new AllImagesAdapter(GetAllImagesActivity.this, images);
-        rvImages.setAdapter(adapter);
-        rvImages.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+
 
     }
 
-    private ArrayList<File> findImage(File filep) {
+   /* private ArrayList<File> findImage(File filep) {
         ArrayList<File> imageList = new ArrayList<>();
         File[] files = filep.listFiles();
         fileList.clear();
@@ -174,22 +223,35 @@ public class GetAllImagesActivity extends AppCompatActivity {
 
 
         return imageList;
-    }
-/*
-    private ArrayList<File> findImage(File file) {
+    }*/
+
+   /* private void findImage() {
+        String directoryPath = listDir(directory);
+        Log.e("directroyyyy","====>"+directoryPath);
+        File file = new File(listDir(selectedDirectory));
+        Log.e("directory path get ","====>"+listDir(selectedDirectory));
 
         ArrayList<File> imageList = new ArrayList<>();
         File[] imageFile = file.listFiles();
         for (File files : imageFile) {
             if (files.isDirectory() && !files.isHidden()) {
-
-                imageList.addAll(findImage(files));
+                imageList.addAll(Collections.singleton(files));
             } else {
                 if (files.getName().endsWith(".jpg")) {
                     imageList.add(files);
                 }
             }
         }
-        return imageList;
+        for (int i = 0; i < imageList.size(); i++) {
+//            Log.i("imagePath","====>"+myFiles.get(i).getAbsolutePath());
+            images.add((imageList.get(i).getAbsolutePath()));
+
+        }
+        adapter = new AllImagesAdapter(GetAllImagesActivity.this, images);
+        rvImages.setAdapter(adapter);
+        rvImages.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+
+        Log.e("imageListSize", "====>" + imageList.size());
+        Toast.makeText(this, "imageListSize          " + imageList.size(), Toast.LENGTH_SHORT).show();
     }*/
 }

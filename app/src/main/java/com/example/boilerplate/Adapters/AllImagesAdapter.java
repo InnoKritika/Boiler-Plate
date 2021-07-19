@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.boilerplate.Activities.FullImageActivity;
 import com.example.boilerplate.R;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,22 +34,22 @@ public class AllImagesAdapter extends RecyclerView.Adapter<AllImagesAdapter.AllI
     @NonNull
     @Override
     public AllImagesViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AllImagesViewholder(LayoutInflater.from(context).inflate(R.layout.text_layout,parent,false));
+        return new AllImagesViewholder(LayoutInflater.from(context).inflate(R.layout.image_item_list_stater, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull AllImagesAdapter.AllImagesViewholder holder, int position) {
-        holder.tv.setText(fileArrayList.get(position));
+//        holder.tv.setText(fileArrayList.get(position));
 //        Glide.with(context).load(fileArrayList.get(position))
-       /* Glide.with(context).load(fileArrayList.get(position)).into(holder.image);
+        Glide.with(context).load(fileArrayList.get(position)).placeholder(R.drawable.ic_launcher_foreground).into(holder.image);
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Intent intent = new Intent(context, FullImageActivity.class);
 //                intent.putExtra("fileAbsolutePath",fileArrayList.get(position).getAbsolutePath());
-                Log.i("fileAbsolutePath","==========>"+fileArrayList.get(position));
+                Log.i("fileAbsolutePath", "==========>" + fileArrayList.get(position));
             }
-        });*/
+        });
     }
 
     @Override
@@ -57,15 +58,17 @@ public class AllImagesAdapter extends RecyclerView.Adapter<AllImagesAdapter.AllI
     }
 
     public class AllImagesViewholder extends RecyclerView.ViewHolder {
-        TextView tv;
-//        ImageView image;
+        //        TextView tv;
+        RoundedImageView image;
+
         public AllImagesViewholder(@NonNull View itemView) {
             super(itemView);
-//            image = itemView.findViewById(R.id.imageList);
-            tv = itemView.findViewById(R.id.tvDirectory);
+            image = itemView.findViewById(R.id.imageList);
+//            tv = itemView.findViewById(R.id.tvDirectory);
+//        }
         }
-    }
-    public interface onPhotoListener{
-        void onPhotoClicked(String path);
+//    public interface onPhotoListener{
+//        void onPhotoClicked(String path);
+//    }
     }
 }
