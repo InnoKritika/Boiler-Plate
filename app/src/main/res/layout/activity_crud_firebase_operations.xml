@@ -11,6 +11,14 @@
         android:layout_margin="10dp"
         android:hint="Name"
         android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etTeacherName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <Spinner
         android:id="@+id/spinnerSubject"
@@ -18,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
         android:entries="@array/subjects"
         android:padding="10dp" />
 

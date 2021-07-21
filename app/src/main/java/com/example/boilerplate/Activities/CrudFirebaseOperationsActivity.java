@@ -29,11 +29,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CrudFirebaseOperationsActivity extends AppCompatActivity {
-    EditText etName, etStudentName;
-    Button btnAdd, btnIndivisualData, btnSpecificData, btnCompleteData,btnLimitedData;
+    EditText etName, etStudentName,etTeacherName;
+    Button btnAdd, btnIndivisualData, btnSpecificData, btnCompleteData, btnLimitedData;
     Spinner spinner;
     DatabaseReference databaseReference;
     ListView listView;
@@ -50,6 +52,7 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinnerSubject);
         listView = findViewById(R.id.listView);
         etStudentName = findViewById(R.id.etStudentName);
+        etTeacherName = findViewById(R.id.etTeacherName);
         btnSpecificData = findViewById(R.id.btnSpecificData);
         btnCompleteData = findViewById(R.id.btnFullData);
         btnLimitedData = findViewById(R.id.btnLimitedData);
@@ -140,17 +143,55 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
 
 
         final EditText etName = dialogView.findViewById(R.id.etUpdateName);
+        final EditText etUpdateTeacherName = dialogView.findViewById(R.id.etUpdateTeacherName);
         final Button btnUpdate = dialogView.findViewById(R.id.btnUpdateStudent);
         final Spinner spinner1 = dialogView.findViewById(R.id.spinnerUpdate);
         final Button btnDelete = dialogView.findViewById(R.id.btnDeleteStudent);
+
+
 
         dialogBuilder.setTitle("Updating Student ... " + studentName);
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
 
-
         btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = etName.getText().toString();
+                String teacherName = etUpdateTeacherName.getText().toString();
+
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                    DatabaseReference child = reference.child("students").child(studentId);
+
+                    /*if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(teacherName)){
+                        child.child("name").setValue(name);
+                        child.child("teacherName").setValue(teacherName);
+                    }
+                    else if(!TextUtils.isEmpty(name)){
+                        child.child("name").setValue(name);
+                    }
+                    else if(!TextUtils.isEmpty(teacherName)){
+                        child.child("teacherName").setValue(teacherName);
+                    }
+                    else if(TextUtils.isEmpty(name) && TextUtils.isEmpty(teacherName)){
+                        Toast.makeText(CrudFirebaseOperationsActivity.this, "Update at Least one field", Toast.LENGTH_SHORT).show();
+                    }*/
+
+                Map<String,Object> update = new HashMap<>();
+                if (!TextUtils.isEmpty(name)) {
+                    update.put("name", name);
+                }if (!TextUtils.isEmpty(teacherName)) {
+                    update.put("teacherName", teacherName);
+                }
+                child.updateChildren(update);
+
+                alertDialog.dismiss();
+
+            }
+        });
+
+       /* btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = etName.getText().toString().trim();
@@ -162,7 +203,7 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
                     Toast.makeText(CrudFirebaseOperationsActivity.this, "Please enter updated name", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,20 +222,21 @@ public class CrudFirebaseOperationsActivity extends AppCompatActivity {
     }
 
 
-    private boolean updateStudent(String id, String name, String subject) {
+   /* private boolean updateStudent(String id, String name, String subject) {
         DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference("students").child(id);
         Crud crud = new Crud(id, name, subject);
         databaseReference1.setValue(crud);
         Toast.makeText(this, "Student data Updated Successfully...", Toast.LENGTH_SHORT).show();
         return true;
-    }
+    }*/
 
     private void addUser() {
         String name = etName.getText().toString().trim();
         String subject = spinner.getSelectedItem().toString();
+        String teacherName = etTeacherName.getText().toString().trim();
         if (!TextUtils.isEmpty(name)) {
             String id = databaseReference.push().getKey();
-            Crud crud = new Crud(id, name, subject);
+            Crud crud = new Crud(id, name, subject,teacherName);
             databaseReference.child(id).setValue(crud);
             Toast.makeText(this, "Student Added", Toast.LENGTH_SHORT).show();
 

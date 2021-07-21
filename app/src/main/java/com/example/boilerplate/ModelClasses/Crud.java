@@ -4,11 +4,13 @@ public class Crud {
     String userId;
     String name;
     String subject;
+    String teacherName;
 
-    public Crud(String userId, String name, String subject) {
+    public Crud(String userId, String name, String subject, String teacherName) {
         this.userId = userId;
         this.name = name;
         this.subject = subject;
+        this.teacherName = teacherName;
     }
     public Crud(){
 
@@ -16,6 +18,14 @@ public class Crud {
 
     public String getName() {
         return name;
+    }
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 
     public void setName(String name) {

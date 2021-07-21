@@ -200,6 +200,17 @@
 
                 android:text="Get all images(gallery)"
                 app:backgroundTint="@color/magenta_700" />
+            <android.widget.Button
+                android:id="@+id/btnCustomStoragePicker"
+                style="@style/buttonTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/magenta_700"
+
+                android:layout_below="@id/ll_number"
+                android:layout_marginTop="8dp"
+                android:text="Custom Storage Picker"
+                app:backgroundTint="@color/magenta_700" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

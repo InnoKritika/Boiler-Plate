@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.boilerplate.R;
 
 public class BoilerPlate extends AppCompatActivity {
-    Button btnImagePicker, btnStatteredImage,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen,btnDialog;
+    Button btnImagePicker, btnStatteredImage,btnMaterialDesign,btnCardView,btnBottomAppBars,btnTopAppBar,btnRewardScreen,btnDialog,btnCustomStoragePicker;
     Button btnCrudFirebase,btnDynamicStorage,btnOTPVerification,btnGoogleSignin,btnFacebookSignin,btnUclicks,btnMultipleCategory,btnHashmapDatabase,btnGetAllImages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,6 +137,13 @@ public class BoilerPlate extends AppCompatActivity {
                 startActivity(gallery);
             }
         });
+        btnCustomStoragePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent custom = new Intent(getApplicationContext(), CustomStoragePicker.class);
+                startActivity(custom);
+            }
+        });
     }
 
     private void initView() {
@@ -157,5 +164,6 @@ public class BoilerPlate extends AppCompatActivity {
         btnMultipleCategory = findViewById(R.id.btnMultipleCategory);
         btnHashmapDatabase = findViewById(R.id.btnHashmapDatabase);
         btnGetAllImages = findViewById(R.id.btnGetAllImages);
+        btnCustomStoragePicker = findViewById(R.id.btnCustomStoragePicker);
     }
 }
