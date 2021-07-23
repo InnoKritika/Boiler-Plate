@@ -1,6 +1,7 @@
 package com.example.boilerplate.Activities;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.codekidlabs.storagechooser.Content;
 import com.codekidlabs.storagechooser.StorageChooser;
 import com.downloader.Error;
 import com.downloader.OnCancelListener;
@@ -107,11 +109,26 @@ public class DynamicStorageLocationActivity extends AppCompatActivity {
 
     private void ShowDirectoryPicker() {
 
+        StorageChooser.Theme theme = new StorageChooser.Theme(getApplicationContext());
+        theme.setScheme(getResources().getIntArray(R.array.paranoid_theme));
+
+        Content c = new Content();
+        c.setCreateLabel("Create");
+        c.setInternalStorageText("My Storage");
+        c.setCancelLabel("Cancel");
+        c.setSelectLabel("Select");
+        c.setOverviewHeading("Select Storage Location");
+        c.setFreeSpaceText("\n Select");
+
+
+
         final StorageChooser chooser = new StorageChooser.Builder()
                 .withActivity(DynamicStorageLocationActivity.this)
                 .withFragmentManager(getFragmentManager())
                 .withMemoryBar(true)
                 .allowCustomPath(true)
+                .setTheme(theme)
+                .withContent(c)
                 .setType(StorageChooser.DIRECTORY_CHOOSER)
                 .build();
 
@@ -124,6 +141,9 @@ public class DynamicStorageLocationActivity extends AppCompatActivity {
                 filePathUser = path;
             }
         });
+
+// and then passing it to builder instance
+
 
         // 3. Display File Picker !
         chooser.show();

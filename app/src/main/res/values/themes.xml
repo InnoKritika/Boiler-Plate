@@ -60,5 +60,25 @@
         <item name="android:background">@color/transprent</item>
     </style>
 
+    <array name="paranoid_theme">
+        <!-- Overview -->
+        <item>#FFF58433</item> <!--  Top Header bg -->
+        <item>@color/white</item> <!-- header text   -->
+        <item>#1D1E23</item> <!-- list bg  -->
+        <item>@color/white</item> <!--  storage list name text  -->
+        <item>#FFFFFF</item> <!-- free space text  -->
+        <item>#FFF58433</item> <!-- memory bar -->
+
+        <!-- secondary dialog colors -->
+        <item>#FFF58433</item> <!-- folder tint -->
+        <item>#1D1E23</item> <!-- list bg -->
+        <item>@android:color/white</item> <!-- list text -->
+        <item>#FFFFFF</item> <!-- address bar tint -->
+        <item>@color/chevronBgColor</item> <!-- new folder hint tint -->
+        <item>#FFFFFF</item> <!-- select button color -->
+        <item>#da6c6c</item> <!-- new folder layour bg -->
+        <item>#2c9633</item> <!-- fab multiselect color -->
+        <item>#1D1E23</item> <!-- address bar bg -->
+    </array>
 
 </resources>
